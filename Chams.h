@@ -70,7 +70,7 @@ bool isShader() // https://stackoverflow.com/a/62663705/17529905
 }
 
 /*
- * "This function returns -1 if "name" (isUseShader) does not correspond to an active uniform variable in program (program), if name starts with the reserved prefix "gl_",
+ * This function returns -1 if "name" (isUseShader) does not correspond to an active uniform variable in program (program), if name starts with the reserved prefix "gl_",
  * or if name is associated with an atomic counter or a named uniform block." https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetUniformLocation.xhtml
  */
 
@@ -95,7 +95,7 @@ void glDrawElements(GLenum mode, GLsizei count, GLenum type, const void *indices
         /* LOGDEBUG("Count: %i", count); By using this, you can get the count from the shader. Logging the count from '_BumpMap' gives you 10716, 1116, 8868, 5394. So, if you were to do
          * if(count == 10716 || count == 1116 || count == 8868 || count == 5394), you wouldn't need to use if(isShader() > 0). */
 
-
+        
         /* Base-Colour Chams: https://i.imgur.com/Mab5QyF.png
         The code below will always use the same colour on the shader, no matter the depth.
 
@@ -170,6 +170,8 @@ void glDrawElements(GLenum mode, GLsizei count, GLenum type, const void *indices
         glDepthFunc(GL_LESS); */
 
 
+        // Rainbow chams can be easily made with my Rainbow Colour Cycler header; https://github.com/Rev/ImGui-Rainbow-Colour-Cycler
+        
         // Interested in creating your own 'style' of chams? Read the documentation!
         // https://docs.microsoft.com/en-us/windows/win32/opengl/gl-functions
         // https://www.khronos.org/
@@ -181,7 +183,7 @@ void glDrawElements(GLenum mode, GLsizei count, GLenum type, const void *indices
 
 /*
  * What does glDrawElements do?
- * In short, glDrawElements renders a set of geometric primitives (triangles, lines, etc - which is shown in the 'mode' parameter).
+ * In short, glDrawElements is used to render a set of geometric primitives (triangles, lines, etc - which is shown in the 'mode' parameter).
  * Read more: https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glDrawElements.xhtml
  */
 
